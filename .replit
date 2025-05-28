@@ -12,3 +12,15 @@ deploymentTarget = "cloudrun"
 [[ports]]
 localPort = 8000
 externalPort = 80
+
+[workflows]
+runButton = "Laravel Dev Server"
+
+[[workflows.workflow]]
+name = "Laravel Dev Server"
+author = 43190304
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "php artisan serve --host=0.0.0.0 --port=8000"
